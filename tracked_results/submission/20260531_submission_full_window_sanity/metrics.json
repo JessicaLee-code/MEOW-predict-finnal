@@ -1,0 +1,15 @@
+{
+  "run_id": "20260531_submission_full_window_sanity",
+  "date": "2026-05-31",
+  "kind": "submission_sanity",
+  "source": "user_reported_metrics",
+  "train_window": "2023-06-01 to 2023-11-30",
+  "eval_window": "2023-12-01 to 2023-12-29",
+  "ensemble": "raw_mean([X1 ridge, M_lgbm_d4])",
+  "metrics": {
+    "pearson": 0.0803,
+    "r2": 0.00465,
+    "mse": 2.3645e-05
+  },
+  "notes": "传统全量交付演练最终sanity结果；按项目红线，此结果只作提交链健康确认，不回灌传统代表选型。"
+}

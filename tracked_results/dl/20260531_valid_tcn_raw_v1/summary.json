@@ -1,0 +1,25 @@
+{
+  "hparams": {
+    "batch_size": 256,
+    "device": "cuda",
+    "dropout": 0.1,
+    "hidden_size": 32,
+    "max_epochs": 4,
+    "num_layers": 4,
+    "patience": 2
+  },
+  "n_folds": 3,
+  "n_seeds": 3,
+  "run_id": "20260531_valid_tcn_raw_v1",
+  "seq_len": 32,
+  "stage": "validation",
+  "status": "ok",
+  "val_corr": {
+    "max": 0.06029832077578723,
+    "mean": 0.009118800694949608,
+    "min": -0.03836649410373684,
+    "n_folds": 9,
+    "positive_rate": 0.7777777777777778,
+    "std": 0.028453175390418407
+  }
+}

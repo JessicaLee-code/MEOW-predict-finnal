@@ -1,0 +1,43 @@
+# ============================================================
+# MEOW-predict-dl 运行依赖（runtime）
+# 2026-06-02 从本机实跑环境捕获 | Python 3.11（本机 3.11.9）
+#
+# 一键装纯 PyPI 依赖：  pip install -r requirements.txt
+# torch 见文件末尾（GPU wheel 因机器 CUDA 而异，需单独装）
+# 开发 / 测试再叠加：    pip install -r requirements-dev.txt
+# ============================================================
+
+# —— 核心：数据与数值 ——
+numpy==1.26.4
+pandas==2.3.3
+tables==3.11.1            # PyTables，读 data/*.h5（本项目用 PyTables，不用 h5py）
+
+# —— 传统侧建模 ——
+scikit-learn==1.8.0       # ridge 成员 + 评测指标（pip 会自动带 scipy）
+lightgbm==4.6.0           # GBDT 成员 M_lgbm_d4
+
+# —— 运行期资源监控 / 内存演练 ——
+psutil==7.1.3             # resource_monitor + run_submission_full_window 内存采样
+
+# ============================================================
+# DL 卡带（GPU / PyTorch）—— 故意不放进上面的 -r 列表
+# 原因：CUDA wheel 不在默认 PyPI，且 cu 版本随机器 NVIDIA 驱动而变，
+#       必须按目标机单独装。torch 版本统一锁 2.6.0。
+#
+# 本机参考 = RTX 4060 Laptop + CUDA 12.4 build：
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+#
+# 换 PC（NVIDIA，CUDA 版本可能不同）怎么选 cu 标签：
+#   1) 新机跑 `nvidia-smi`，看右上角 "CUDA Version"（= 驱动支持的最高 CUDA）。
+#   2) torch 2.6.0 官方只提供这三档 GPU 标签，选 **不超过上面那个版本** 的最高档：
+#        CUDA Version ≥ 11.8 → cu118
+#        CUDA Version ≥ 12.4 → cu124   （本机即此档）
+#        CUDA Version ≥ 12.6 → cu126
+#   3) 命令同上，把 cu124 换成所选标签即可。
+#
+# 装后自检（应打印  2.6.0+cuXXX  True  显卡名）：
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+#
+# CPU 兜底（无 NVIDIA；训练极慢，仅供应急 smoke）：
+#   pip install torch==2.6.0
+# ============================================================
