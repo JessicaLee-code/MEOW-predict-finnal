@@ -1,0 +1,49 @@
+{
+  "adapter": {
+    "columns": [],
+    "groups": [],
+    "kind": "raw_channels"
+  },
+  "config_fingerprint": "75344dafcf33cffb",
+  "exec": {
+    "device": "cpu",
+    "n_workers": 1,
+    "out_dir": "results/dl",
+    "resume": false,
+    "reuse_checkpoint": false,
+    "seeds": [
+      42
+    ]
+  },
+  "model": {
+    "hparams": {
+      "batch_size": 256,
+      "device": "cuda",
+      "dropout": 0.1,
+      "max_epochs": 4,
+      "patience": 2
+    },
+    "kind": "tcn"
+  },
+  "protocol": {
+    "earlystop_frac": 0.15,
+    "embargo": 1,
+    "max_folds": 1,
+    "min_train_days": 40,
+    "profile": "single_split",
+    "rolling_end": 20231229,
+    "rolling_start": 20230601,
+    "stage": "search",
+    "step": 5,
+    "train_window": null,
+    "val_window": 5
+  },
+  "run_id": "20260531_search_tcn_raw_v1",
+  "search": {
+    "early_kill": false,
+    "early_kill_warmup_epochs": 3,
+    "n_trials": 4,
+    "search_overrides": {},
+    "train_subsample_frac": 1.0
+  }
+}

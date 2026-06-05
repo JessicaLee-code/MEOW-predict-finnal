@@ -1,0 +1,24 @@
+{
+  "best": {
+    "found": true,
+    "hparams": {
+      "batch_size": 256,
+      "device": "cuda",
+      "dropout": 0.1,
+      "hidden_size": 32,
+      "max_epochs": 4,
+      "num_layers": 4,
+      "patience": 2
+    },
+    "n_evals": 1,
+    "seq_len": 32,
+    "trial_id": 1,
+    "val_corr_mean": 0.01653154353905335,
+    "val_corr_min": 0.01653154353905335
+  },
+  "n_folds": 1,
+  "n_trials": 4,
+  "run_id": "20260531_search_tcn_raw_v1",
+  "stage": "search",
+  "status": "ok"
+}
