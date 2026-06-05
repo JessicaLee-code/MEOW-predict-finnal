@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "description": "git追踪的小体量正式结果清单，供双机同步与深入分析。",
+  "artifacts": [
+    {
+      "run_id": "20260531_search_tcn_raw_v1",
+      "kind": "dl_search",
+      "date": "2026-05-31",
+      "status": "formal",
+      "source": "results/dl/20260531_search_tcn_raw_v1",
+      "tracked_dir": "tracked_results/dl/20260531_search_tcn_raw_v1",
+      "files": [
+        "best_config.json",
+        "config.json",
+        "summary.json",
+        "trials.csv"
+      ],
+      "notes": "TCN首轮海选；4个trial，2正2负，best val_corr=0.01653。"
+    },
+    {
+      "run_id": "20260531_valid_tcn_raw_v1",
+      "kind": "dl_validation",
+      "date": "2026-05-31",
+      "status": "formal",
+      "source": "results/dl/20260531_valid_tcn_raw_v1",
+      "tracked_dir": "tracked_results/dl/20260531_valid_tcn_raw_v1",
+      "files": [
+        "config.json",
+        "fold_metrics.csv",
+        "summary.json"
+      ],
+      "notes": "TCN首轮expanding认证；9个评估点，mean=0.00912，方差偏大。"
+    },
+    {
+      "run_id": "20260531_submission_full_window_sanity",
+      "kind": "submission_sanity",
+      "date": "2026-05-31",
+      "status": "formal",
+      "source": "user_reported_metrics",
+      "tracked_dir": "tracked_results/submission/20260531_submission_full_window_sanity",
+      "files": [
+        "metrics.json"
+      ],
+      "notes": "传统全窗口交付演练最终sanity指标，由用户在另一台设备跑出并确认。"
+    }
+  ]
+}

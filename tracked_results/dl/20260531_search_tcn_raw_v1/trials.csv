@@ -1,0 +1,5 @@
+trial_id,seq_len,val_corr_mean,val_corr_min,val_corr_std,n_evals,status,error_msg,hp_device,hp_max_epochs,hp_patience,hp_batch_size,hp_dropout,hp_hidden_size,hp_num_layers
+0,48,-0.0054133852525599345,-0.0054133852525599345,0.0,1,ok,,cuda,4,2,256,0.1,32,4
+1,32,0.01653154353905335,0.01653154353905335,0.0,1,ok,,cuda,4,2,256,0.1,32,4
+2,48,-0.004528043555523904,-0.004528043555523904,0.0,1,ok,,cuda,4,2,256,0.1,128,4
+3,32,0.013045708155880116,0.013045708155880116,0.0,1,ok,,cuda,4,2,256,0.1,128,2

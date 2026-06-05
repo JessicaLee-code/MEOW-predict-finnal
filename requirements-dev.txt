@@ -1,0 +1,8 @@
+# ============================================================
+# MEOW-predict-dl 开发 / 测试依赖（在 runtime 依赖之上叠加）
+# 安装：pip install -r requirements-dev.txt
+# ============================================================
+-r requirements.txt
+
+pytest==9.0.3            # 跑 tests/；项目用例本是 unittest 写的，
+                         # 用 `python -m unittest` 也能跑，pytest 只是统一收集入口
